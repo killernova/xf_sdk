@@ -12,3 +12,6 @@
 *.o
 *.a
 mkmf.log
+
+!/ext/xf_sdk/lib/x64/*.so
+!/ext/xf_sdk/lib/x86/*.so
