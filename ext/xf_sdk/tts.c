@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "xf_sdk.h"
 #include "qtts.h"
 #include "msp_cmn.h"
 #include "msp_errors.h"

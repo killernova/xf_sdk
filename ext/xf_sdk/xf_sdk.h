@@ -3,7 +3,7 @@
 
 #include "ruby.h"
 
-VALUE tts(VALUE mod);
+VALUE tts(VALUE mod, VALUE text, VALUE dest_path);
 VALUE is_success(VALUE mod, VALUE code);
 
 #endif /* XF_SDK_H */

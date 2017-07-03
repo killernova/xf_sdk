@@ -12,4 +12,9 @@ describe XfSdk do
   it "-1 failed" do
     expect(XfSdk.success?(-1)).to eq(false)
   end
+
+  it "generates hello_world.wav success" do
+    result = XfSdk.tts("hello world", "hello_world.wav")
+    expect(XfSdk.success?(result)).to eq(true)
+  end
 end
