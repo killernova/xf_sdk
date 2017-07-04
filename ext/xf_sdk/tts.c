@@ -156,5 +156,5 @@ VALUE tts(VALUE mod, VALUE text, VALUE dest_path) {
 exit:
   MSPLogout(); //退出登录
 
-  return ret;
+  return INT2NUM(ret);
 }
