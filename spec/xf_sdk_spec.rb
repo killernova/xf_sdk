@@ -17,7 +17,7 @@ describe XfSdk do
   it "generates wav file success" do
     file = Tempfile.new
     begin
-      result = XfSdk.tts("hello world", file.path)
+      result = XfSdk::TTS.convert("hello world", file.path)
       expect(XfSdk.success?(result)).to eq(true)      
     ensure
       file.close(true)
