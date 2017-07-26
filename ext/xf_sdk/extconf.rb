@@ -1,14 +1,21 @@
 require "mkmf"
 require "os"
 
-lib_path = []
-if OS.bits == 64
-  lib_path << File.expand_path("lib/x64", __dir__)
+libs_path = []
+
+lib_path = if OS.bits == 64
+  File.expand_path("lib/x64", __dir__)
 else
-  lib_path << File.expand_path("lib/x86", __dir__)
+  File.expand_path("lib/x86", __dir__)
 end
 
-dir_config("xf_sdk", [], lib_path)
+if RbConfig::CONFIG["RPATHFLAG"].to_s.empty?
+  $LDFLAGS << " -Wl,-rpath,#{lib_path}"
+end
+
+libs_path << lib_path
+
+dir_config("xf_sdk", [], libs_path)
 
 have_library("msc") or raise "Library msc not found."
 have_library("dl") or raise "Library dl not found."
