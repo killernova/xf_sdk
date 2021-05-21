@@ -17,7 +17,6 @@ libs_path << lib_path
 
 dir_config("xf_sdk", [], libs_path)
 
-have_library("msc") or raise "Library msc not found."
 have_library("dl") or raise "Library dl not found."
 have_library("pthread") or raise "Library pthread not found."
 
